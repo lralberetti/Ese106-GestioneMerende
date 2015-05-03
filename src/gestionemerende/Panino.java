@@ -7,8 +7,12 @@ public class Panino extends Articolo{
 	public Panino(String iD, String descrizione, double costoUnitario,
 			double apportoCalorico, boolean vegetariano, boolean carneSuina) {
 		super(iD, descrizione, costoUnitario, apportoCalorico);
-		this.vegetariano = vegetariano;
-		this.carneSuina = carneSuina;
+		if(!vegetariano && !carneSuina) {
+			this.vegetariano = vegetariano;
+			this.carneSuina = carneSuina;
+		}
+		else
+			throw new IllegalArgumentException("You are confused...");
 	}
 	
 	public boolean isVegetariano(){

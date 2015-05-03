@@ -22,8 +22,29 @@ public class Ordine {
 		return classe;
 	}
 	
+	public int getNumeroArticoli(){
+		return this.articoli.size();
+	}
+	
+	public void setClasse(Classe classe){
+		if(classe == null){
+			throw new IllegalArgumentException("class non puo essere null");
+		}
+		this.classe=classe;
+	}
+	
 	public Vector<Articolo> getArticoli(){
 		return articoli;
+	}
+	
+	public void addArticolo(Articolo articolo){
+		
+		if(articolo != null){
+			this.articoli.addElement(articolo);
+		}
+		else{
+			throw new IllegalArgumentException("a cannot be null");
+		}
 	}
 	
 	public double getCostoTotale(){

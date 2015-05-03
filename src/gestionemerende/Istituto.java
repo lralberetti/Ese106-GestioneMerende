@@ -20,7 +20,14 @@ public class Istituto {
 	public Vector<Classe> getClassi() {
 		return classi;
 	}
+	
 
+	public void addClasse(Classe c){
+		if(c != null)
+			this.classi.add(c);
+		else
+			throw new IllegalArgumentException("c non puo essere null");
+	}
 	@Override
 	public String toString() {
 		return "Istituto [nome=" + nome + ", classi=" + classi + "]";
